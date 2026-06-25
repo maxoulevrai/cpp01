@@ -6,11 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 22:48:28 by root              #+#    #+#             */
-/*   Updated: 2026/06/08 22:48:53 by root             ###   ########.fr       */
+/*   Updated: 2026/06/24 21:50:44 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "../includes/Zombie.hpp"
 
 Zombie*	newZombie(std::string name) {
 	return new Zombie(name);

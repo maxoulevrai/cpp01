@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 21:10:09 by root              #+#    #+#             */
-/*   Updated: 2026/06/10 23:04:36 by root             ###   ########.fr       */
+/*   Updated: 2026/06/24 22:05:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	search_and_replace(std::ifstream &file, char **av) {
 
 int	main(int ac, char **av) {
 	if (ac != 4)
-		return (std::cout << "Usage: ./ft_sed <filename> <s1> <s2>" << std::endl, 1);
+		return (std::cerr << "Usage: ./ft_sed <filename> <s1> <s2>" << std::endl, 1);
 	std::ifstream	file(av[1]);
 	if (!file) 
-		return (std::cout << "fichier '" << av[1] << "' introuvable" << std::endl, 1);
+		return (std::cerr << "fichier '" << av[1] << "' introuvable" << std::endl, 1);
 	search_and_replace(file, av);
 	return (0);
 }
