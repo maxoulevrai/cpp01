@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/08 22:12:06 by root              #+#    #+#             */
-/*   Updated: 2026/06/09 00:34:12 by root             ###   ########.fr       */
+/*   Updated: 2026/06/27 19:24:30 by maleca           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	main(void) {
 	std::string &stringREF = call;
 
 	std::cout << "string address: " << &call << std::endl;
-	std::cout << "stringPTR address: " << stringPTR << std::endl;
+	std::cout << "stringPTR address: " << &stringPTR << std::endl;
+	// std::cout << "stringPTR address: " << stringPTR << std::endl;
 	std::cout << "stringREF address: " << &stringREF << std::endl;
 	std::cout << std::endl;
 
