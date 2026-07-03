@@ -3,44 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maleca <maleca@student.42.fr>              +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 21:10:09 by root              #+#    #+#             */
-/*   Updated: 2026/07/01 19:09:06 by maleca           ###   ########.fr       */
+/*   Updated: 2026/07/03 11:58:04 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <fstream>
 #include <iostream>
-#include <cstring>
-#include <algorithm>
 
 void	search_and_replace(std::ifstream &file, char **av) {
 	std::string 	s1(av[2]);
 	std::string 	s2(av[3]);
 	std::string		line;
-	std::string		all;
-	char			*new_filename;
+	std::string		new_filename;
+	std::size_t		pos;
 
-	new_filename = strcat(av[1], ".replace");
-	std::ofstream	new_file(new_filename);
+	if (s1.empty())
+		return ;
 
-	while (std::getline(file, line))
-		all += line;
-	std::string::iterator	it;
-	while (true)
-	{
-		it = find(all.begin(), all.end(), s1[0]);
-		if (it = all.end())
-			
+	new_filename = std::string(av[1]) + ".replace";
+	std::ofstream	new_file(new_filename.c_str());
 
+	while (std::getline(file, line)) {
+		pos = 0;
+		while ((pos = line.find(s1, pos)) != std::string::npos) {
+			line = line.substr(0, pos) + s2 + line.substr(pos + s1.size());
+			pos += s2.size();
+		}
+		new_file << line;
+		if (!file.eof())
+			new_file << std::endl;
 	}
-	
-	
-	
-
-
 }
 
 int	main(int ac, char **av) {
